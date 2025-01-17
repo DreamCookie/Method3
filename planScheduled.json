@@ -1,0 +1,49 @@
+[
+  {
+    "id": "e17b096b-006d-45c8-8b8f-b26a5a749623",
+    "name": "LoadMaterialA",
+    "resources": [
+      "Robot1",
+      "BufferA"
+    ],
+    "duration": 5.0,
+    "earliest_start": 0.0,
+    "deadline": null,
+    "dependencies": [],
+    "reconfiguration_needed": false,
+    "scheduled_start": 0.0,
+    "scheduled_end": 5.0
+  },
+  {
+    "id": "574d66c1-d78a-4a25-b7c9-8723bbfeb9e9",
+    "name": "MoveToMachine1",
+    "resources": [
+      "Robot1"
+    ],
+    "duration": 3.0,
+    "earliest_start": 0.0,
+    "deadline": null,
+    "dependencies": [
+      "LoadMaterialA"
+    ],
+    "reconfiguration_needed": true,
+    "scheduled_start": 5.0,
+    "scheduled_end": 8.0
+  },
+  {
+    "id": "38f5d90f-3da5-4676-8785-2dd621bc01d9",
+    "name": "ProcessOnMachine1",
+    "resources": [
+      "Machine1"
+    ],
+    "duration": 10.0,
+    "earliest_start": 0.0,
+    "deadline": null,
+    "dependencies": [
+      "MoveToMachine1"
+    ],
+    "reconfiguration_needed": false,
+    "scheduled_start": 8.0,
+    "scheduled_end": 18.0
+  }
+]
